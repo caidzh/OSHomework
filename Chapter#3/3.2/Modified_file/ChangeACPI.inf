@@ -1,0 +1,29 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = ChangeACPI
+  FILE_GUID                      = 7d97e67e-1ace-48da-a297-a1d8eb93c3f6
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.01
+  ENTRY_POINT                   = UefiMain
+
+[Sources]
+  ChangeACPI.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  PrintLib
+  UefiBootServicesTableLib
+
+[Protocols]
+  gEfiAcpiSdtProtocolGuid        ## CONSUMES
+
+[Depex]
+  TRUE

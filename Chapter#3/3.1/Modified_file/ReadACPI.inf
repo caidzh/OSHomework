@@ -1,0 +1,29 @@
+[Defines]
+  INF_VERSION                    = 0x00010005
+  BASE_NAME                      = ReadACPI
+  FILE_GUID                      = bd9da39e-f947-400e-916f-6c92227a919d
+  MODULE_TYPE                    = UEFI_APPLICATION
+  VERSION_STRING                 = 0.01
+  ENTRY_POINT                   = UefiMain
+
+[Sources]
+  ReadACPI.c
+
+[Packages]
+  MdePkg/MdePkg.dec
+  MdeModulePkg/MdeModulePkg.dec
+
+[LibraryClasses]
+  UefiApplicationEntryPoint
+  UefiLib
+  BaseLib
+  BaseMemoryLib
+  DebugLib
+  PrintLib
+  UefiBootServicesTableLib
+
+[Protocols]
+  gEfiAcpiSdtProtocolGuid        ## CONSUMES
+
+[Depex]
+  TRUE
